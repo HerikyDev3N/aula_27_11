@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Estático e getter</title>
+</head>
+<body>
+    <h1>Exemplo JavaScript com Setter e Getter </h1>
+
+    <div id="resultado">
+
+    </div>
+
+    <script>
+        class Usuario{
+            constructor(nome_usuario){
+                this.nome = nome_usuario;
+            }
+            static criarUsuario(nome_usuarioNovo){
+                return new Usuario(nome_usuarioNovo)
+            }
+            get retornar_nome(){
+                return this.nome;
+            }
+        }
+
+        function exibirResultado(){
+            const resultado_div = document.getElementById('resultado')
+
+            // Criar instancia com nome do objeto-usuario 
+            const usuario = Usuario.criarUsuario('Davi')
+            const nomeUsuario = usuario.retornar_nome;
+
+            resultado_div.textContent = `Nome do usuario cadastrado: ${nomeUsuario}`
+
+
+        }
+        // chamar funcçao para exibir resultado
+        window.onload = exibirResultado;
+    </script>
+</body>
+</html>

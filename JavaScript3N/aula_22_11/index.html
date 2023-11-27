@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clousure com parametros e DOM</title>
+</head>
+<body>
+    <button id="meuBotao">CLique aqui</button>
+    <p id="contador">0</p>
+
+    <script>
+        function criarContador(parametroBotao, parametroContador){
+            let contador = 0;
+            function incrementarContador(){
+                contador++;
+                elementoContador.textContent = contador;
+            }
+            parametroBotao.addEventListener('click', incrementarContador);
+        }
+        const elementoBotao = document.getElementById('meuBotao')
+        const elementoContador = document.getElementById('contador')
+
+        criarContador(elementoBotao, elementoContador)
+    </script>
+</body>
+</html>
